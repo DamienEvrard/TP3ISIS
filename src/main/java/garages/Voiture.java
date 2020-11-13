@@ -99,13 +99,17 @@ public class Voiture {
                 out.append(garage+"\n");
                 out.append(liste.get(i).toString()+"\n");
                 
-                for(int j = i; j<liste.size(); j++){
+                for(int j = i+1; j<liste.size(); j++){
                     if(liste.get(j).getGarage()==liste.get(i).getGarage()){
                         out.append(liste.get(j).toString()+"\n");
                         liste.remove(liste.get(j));
                     }
                 }
+                if (liste.size()==1){
+                    break;
+                }
                 liste.remove(i);
+                i--;
             }
 	}
 
